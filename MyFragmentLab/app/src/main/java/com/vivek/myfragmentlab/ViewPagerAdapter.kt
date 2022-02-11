@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 
+/*
+* //todo this class is for simple viewpager
+* */
 class ViewPagerAdapter(fm:FragmentManager) : FragmentStatePagerAdapter(fm,
     BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
