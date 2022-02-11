@@ -13,19 +13,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        val viewPager = ViewPagerAdapter(supportFragmentManager).apply {
+            add(FirstFragment())
+            add(SecondFragment())
+        }
 
-        supportFragmentManager.beginTransaction().replace(R.id.frameContainer, SecondFragment())
-            .commitNow()
+        binding.viewPager.adapter = viewPager
+        binding.viewPager.setPageTransformer(true,Transformation())
 
-    }
 
-    fun firstBtn(view: View) {
-        val bundle = Bundle()
-        bundle.putString("PARAM", "Don't poke...")
-        val fragment = SecondFragment()
-        fragment.arguments = bundle
-        //Simple way to add fragment into current activity
-        supportFragmentManager.beginTransaction().replace(R.id.frameContainer, fragment)
-            .commitNow()
     }
 }

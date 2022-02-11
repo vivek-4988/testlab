@@ -11,30 +11,12 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <androidx.appcompat.widget.LinearLayoutCompat
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"/>
 
-            <Button
-                android:onClick="firstBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="GET VALUE" />
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_weight="1" />
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <FrameLayout
-            android:id="@+id/frameContainer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:context=".MainActivity">
-
-        </FrameLayout>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 </layout>

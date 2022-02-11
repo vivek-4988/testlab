@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import com.vivek.myfragmentlab.databinding.FragmentFirstBinding
 import com.vivek.myfragmentlab.databinding.FragmentSecondBinding
 
 
@@ -19,18 +20,18 @@ private const val ARG_PARAM2 = "param2"
  * Use the [SecondFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class SecondFragment : Fragment() {
+class FirstFragment : Fragment() {
 
-    lateinit var binding: FragmentSecondBinding;
+    lateinit var binding: FragmentFirstBinding ;
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_second, container, false
+            inflater, R.layout.fragment_first, container, false
         )
-        binding.secondTv.text = "My second fragment"
+        binding.secondTv.text = "My First fragment"
         return binding.root
     }
 }
