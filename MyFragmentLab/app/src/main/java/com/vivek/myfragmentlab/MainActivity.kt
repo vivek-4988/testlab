@@ -14,17 +14,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
+        supportFragmentManager.beginTransaction().replace(R.id.frameContainer, SecondFragment())
+            .commitNow()
+
     }
 
     fun firstBtn(view: View) {
+        val bundle = Bundle()
+        bundle.putString("PARAM", "Don't poke...")
+        val fragment = SecondFragment()
+        fragment.arguments = bundle
         //Simple way to add fragment into current activity
-        supportFragmentManager.beginTransaction().replace(R.id.frameContainer, FirstFragment())
-            .commit()
-    }
-
-    fun secondBtn(view: View) {
-        //Simple way to add fragment into current activity
-        supportFragmentManager.beginTransaction().replace(R.id.frameContainer, SecondFragment())
-            .commit()
+        supportFragmentManager.beginTransaction().replace(R.id.frameContainer, fragment)
+            .commitNow()
     }
 }

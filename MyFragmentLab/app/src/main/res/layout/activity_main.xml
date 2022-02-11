@@ -19,18 +19,12 @@
                 android:onClick="firstBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pree first" />
+                android:text="GET VALUE" />
 
             <View
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_weight="1" />
-
-            <Button
-                android:onClick="secondBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Press Second" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
