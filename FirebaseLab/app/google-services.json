@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "492532112763",
+    "firebase_url": "https://fir-lab-9d8d4-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "fir-lab-9d8d4",
+    "storage_bucket": "fir-lab-9d8d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:492532112763:android:fed1f97a9eb483830431de",
+        "android_client_info": {
+          "package_name": "com.vivek.firebaselab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "492532112763-47ib55gma1k8j0i3m67t3kkvul44b7ii.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAh01wk5KNS-baJR1zfAs4CXfIKc6YoPSI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "492532112763-47ib55gma1k8j0i3m67t3kkvul44b7ii.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
