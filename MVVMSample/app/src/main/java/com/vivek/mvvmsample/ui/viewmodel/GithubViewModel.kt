@@ -2,6 +2,7 @@ package com.vivek.mvvmsample.ui.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.liveData
 import androidx.lifecycle.viewModelScope
 import com.vivek.mvvmsample.data.models.SearchUserDO
 import com.vivek.mvvmsample.data.models.Users
@@ -12,6 +13,10 @@ class GithubViewModel : ViewModel() {
 
     val users = MutableLiveData<List<Users>>()
     val searchUser = MutableLiveData<List<SearchUserDO>>()
+
+    /*
+    * TODO simple getting livedata
+    * */
     fun fetchUser() {
         runIO {
             val res = withContext(Dispatchers.IO) { GitHubRepo.getUsers() }
@@ -26,15 +31,14 @@ class GithubViewModel : ViewModel() {
         }
     }
 
-    fun searchUser(name:String) {
-        runIO {
-            val res = withContext(Dispatchers.IO) { GitHubRepo.searchUsers(name) }
-            if (res.isSuccessful) {
-                res.body()?.let {
-                    searchUser.postValue((it))
-                }
-            } else {
-
+    /*
+    * TODO return data as livedata using emit
+    * */
+    fun searchUser(name: String) = liveData(Dispatchers.IO) {
+        val res = withContext(Dispatchers.IO) { GitHubRepo.searchUsers(name) }
+        if (res.isSuccessful) {
+            res.body()?.let {
+                emit(it)
             }
         }
     }
