@@ -1,9 +1,5 @@
 package com.vivek.mvvmsample.data.models
 
-data class Users(
-	val users: List<UsersItem?>? = null
-)
-
 data class UsersItem(
 	val gistsUrl: String? = null,
 	val reposUrl: String? = null,
