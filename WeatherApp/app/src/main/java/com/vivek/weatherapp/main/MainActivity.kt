@@ -1,7 +1,8 @@
-package com.vivek.weatherapp
+package com.vivek.weatherapp.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.vivek.weatherapp.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
