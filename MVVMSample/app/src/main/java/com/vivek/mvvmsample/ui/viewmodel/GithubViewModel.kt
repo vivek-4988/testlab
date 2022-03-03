@@ -23,8 +23,6 @@ class GithubViewModel : ViewModel() {
                     //users.value = (it) // this only work in main thread
                     users.postValue((it))
                 }
-            } else {
-
             }
         }
     }
