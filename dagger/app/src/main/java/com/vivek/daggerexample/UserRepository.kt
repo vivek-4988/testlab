@@ -5,10 +5,21 @@ import com.vivek.daggerexample.Constants.TAG
 import javax.inject.Inject
 
 
-class UserRepository @Inject constructor() {
+interface UserRepository{
+    fun saveUer(email:String,password:String)
+}
 
-    fun saveUesr(){
-        Log.d(TAG, "saveUesr: ")
+class SQlRepository @Inject constructor():UserRepository {
+    override fun saveUer(email: String, password: String) {
+        Log.d(TAG, "saveUesr: in sql ")
     }
 
+}
+
+
+
+class FirebaseRepo : UserRepository{
+    override fun saveUer(email: String, password: String) {
+        Log.d(TAG, "saveUesr: in firebase")
+    }
 }

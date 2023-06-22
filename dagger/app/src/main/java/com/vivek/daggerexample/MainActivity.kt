@@ -2,17 +2,12 @@ package com.vivek.daggerexample
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.vivek.daggerexample.ui.theme.DaggerExampleTheme
+import javax.inject.Inject
 
 class MainActivity : ComponentActivity() {
+
+    @Inject
+    lateinit var userRegisterationService: UserRegisterationService
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.acitivty_main)
@@ -26,9 +21,13 @@ class MainActivity : ComponentActivity() {
 
         //todo dagger DI
         val component = DaggerUserRegisterationComponent.builder().build()
-        val userRegisterationService = component.getUserRegService()
-        val emailService = component.getEmailService()
-        val repo = component.getUserRepo()
+        //todo when  minimum objects injected in component
+//        val userRegisterationService = component.getUserRegService()
+//        val emailService = component.getEmailService()
+//        val repo = component.getUserRepo()
+
+        //todo when bunch of objects want to inject
+        component.injectAll(this)
         userRegisterationService.register("vivektest@gmail.com","111111")
 
     }
