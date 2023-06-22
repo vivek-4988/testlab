@@ -10,7 +10,7 @@ import javax.inject.Named
 @Module
 class NotificationServiceModule {
 
-    @Named("msg")
+    @MessageQualifier
     @Provides
     fun getMsg():NotificationService{
         return MessageService();
