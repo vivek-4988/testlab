@@ -20,7 +20,9 @@ class MainActivity : ComponentActivity() {
 //        val userRegisterationService = UserRegisterationService(userRepo,emailService)
 
         //todo dagger DI
-        val component = DaggerUserRegisterationComponent.builder().build()
+//        val component = DaggerUserRegisterationComponent.builder().build()
+
+        val component = (application as UserApplication).userRegisterationComponent
         //todo when  minimum objects injected in component
 //        val userRegisterationService = component.getUserRegService()
 //        val emailService = component.getEmailService()
