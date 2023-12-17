@@ -1,0 +1,24 @@
+1.===========
+root gradle
+
+    id 'com.google.dagger.hilt.android' version '2.44' apply false
+2.===========
+project gradle
+    add dependecy
+
+    //for dagger hilt
+    implementation "com.google.dagger:hilt-android:2.44"
+    kapt "com.google.dagger:hilt-compiler:2.44"
+
+    add plugin
+
+        id 'kotlin-kapt'
+        id 'com.google.dagger.hilt.android'
+
+3.====== Application make
+    @HiltAndroidApp
+
+4.Launcher class /MainActivity here
+
+@AndroidEntryPoint
+(This will create base app object)

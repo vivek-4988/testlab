@@ -2,35 +2,19 @@ package com.vivek.daggerexample
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     @Inject
-    lateinit var userRegisterationService: UserRegisterationService
+    lateinit var com: Computer
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.acitivty_main)
 
-        //todo manual DI
-//        val userRepo = UserRepository()
-//        val emailService = EmailService()
-//
-//        //construction injection
-//        val userRegisterationService = UserRegisterationService(userRepo,emailService)
-
-        //todo dagger DI
-//        val component = DaggerUserRegisterationComponent.builder().build()
-
-        val component = (application as UserApplication).userRegisterationComponent
-        //todo when  minimum objects injected in component
-//        val userRegisterationService = component.getUserRegService()
-//        val emailService = component.getEmailService()
-//        val repo = component.getUserRepo()
-
-        //todo when bunch of objects want to inject
-        component.injectAll(this)
-        userRegisterationService.register("vivektest@gmail.com","111111")
+        com.getComputer()
 
     }
 }
