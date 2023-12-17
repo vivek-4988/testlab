@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import com.vivek.daggerexample.interfaces.AppModule
 import com.vivek.daggerexample.interfaces.ImplementOne
 import com.vivek.daggerexample.interfaces.Main
+import com.vivek.daggerexample.interfaces.MainTwo
 import com.vivek.daggerexample.interfaces.MaineOne
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -18,6 +19,9 @@ class MainActivity : ComponentActivity() {
     @Inject
     lateinit var maineOne: MaineOne
 
+    @Inject
+    lateinit var mainTwo: MainTwo
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.acitivty_main)
@@ -25,5 +29,8 @@ class MainActivity : ComponentActivity() {
         com.getComputer()
 
         maineOne.mainOne()
+
+        mainTwo.mainTwo()
+
     }
 }
