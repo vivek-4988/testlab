@@ -23,4 +23,11 @@ project gradle
 @AndroidEntryPoint
 (This will create base app object)
 
-5.
+5. create interface
+
+    check One for @binds
+    check demotwo for @Provides
+
+6. Qualifier
+
+    go to test class

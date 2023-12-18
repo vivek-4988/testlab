@@ -2,11 +2,9 @@ package com.vivek.daggerexample
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
-import com.vivek.daggerexample.interfaces.AppModule
-import com.vivek.daggerexample.interfaces.ImplementOne
-import com.vivek.daggerexample.interfaces.Main
 import com.vivek.daggerexample.interfaces.MainTwo
 import com.vivek.daggerexample.interfaces.MaineOne
+import com.vivek.daggerexample.qualifiers.Test
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -22,6 +20,9 @@ class MainActivity : ComponentActivity() {
     @Inject
     lateinit var mainTwo: MainTwo
 
+    @Inject
+    lateinit var test: Test
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.acitivty_main)
@@ -31,6 +32,8 @@ class MainActivity : ComponentActivity() {
         maineOne.mainOne()
 
         mainTwo.mainTwo()
+
+        test.getNames()
 
     }
 }
